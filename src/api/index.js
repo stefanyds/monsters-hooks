@@ -1,17 +1,17 @@
 import axios from 'axios'
 
 export const getMonsters = async () => {
-  let response;
+  let monsters = [];
   try {
-    response = await axios.get('https://jsonplaceholder.typicode.com/users');
-    response.statusText = "";
-    response.ok = true;
-    response.data.monsters = response.data;
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+    monsters.statusText = "";
+    monsters.response = true;
+    monsters.data = response.data;
   } catch (error) {
-    response = error.response;
-    response.statusText = 'Lista de monstros indisponível.';
-    response.ok = false;
-    response.data.monsters = [];
+    monsters = error.response;
+    monsters.statusText = 'Lista de monstros indisponível.';
+    monsters.ok = false;
+    monsters.data = [];
   }
-  return response;
+  return monsters;
 };
